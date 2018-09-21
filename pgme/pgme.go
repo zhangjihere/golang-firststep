@@ -54,8 +54,8 @@ func healthz(w http.ResponseWriter, _ *http.Request) {
 func home(w http.ResponseWriter, r *http.Request) {
 
 	metricList := []string {
-		"temperature.gpu", "utilization.gpu",
-		"utilization.memory", "memory.total", "memory.free", "memory.used"}
+		"gpu.temperature", "gpu.utilization",
+		"gpu.utilization.memory", "gpu.memory.total", "gpu.memory.free", "gpu.memory.used"}
 
 	verInfo := make(map[string]string)
 	verInfo["Buildtime"] = BuildTime
@@ -105,8 +105,8 @@ func metrics(response http.ResponseWriter, request *http.Request) {
     }
 
     metricList := []string {
-        "temperature.gpu", "utilization.gpu",
-        "utilization.memory", "memory.total", "memory.free", "memory.used"}
+        "gpu.temperature", "gpu.utilization",
+        "gpu.utilization.memory", "gpu.memory.total", "gpu.memory.free", "gpu.memory.used"}
 
     result := ""
     for _, row := range records {
